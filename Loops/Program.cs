@@ -10,7 +10,7 @@ namespace Loops
                 //Console.WriteLine("Are we there yet?");
             Random generator = new Random();
             int pin = 12345;
-            int entry;
+            int entry, die1, die2;
 
             Console.WriteLine("WELCOME TO THE BANK OF ALDWORTH.");
             Console.Write("ENTER YOUR PIN:");
@@ -34,13 +34,16 @@ namespace Loops
 
             Console.WriteLine("Press enter to roll 2 dice");
             Console.ReadLine();
-            int die1 = generator.Next(1, 7);
-            int die2 = generator.Next(1, 7);
-            Console.WriteLine(die1);
-            Console.WriteLine(die2);
-            Console.WriteLine();
-            Console.WriteLine($"{die1} + {die2} = {die1 + die2}");
-            Console.WriteLine();
+            die1 = generator.Next(1, 7);
+            die2 = generator.Next(1, 7);
+            while (die1 != die2)
+            {
+                die1 = generator.Next(1, 7);
+                die2 = generator.Next(1, 7);
+                Console.WriteLine($"{die1} {die2}");
+               
+            }
+            Console.WriteLine("You got doubles!");
         }
     }
 }
