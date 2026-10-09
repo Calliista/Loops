@@ -68,6 +68,11 @@ namespace Loops
             Console.WriteLine("Type in a message, and I'll desplay it 5 times.");
             Console.Write("Message: ");
             string message = Console.ReadLine();
+
+            while (count < 5);
+            {
+                Console.WriteLine((count + 1));
+            }
         }
     }
 }
