@@ -10,8 +10,9 @@ namespace Loops
                 //Console.WriteLine("Are we there yet?");
             Random generator = new Random();
             int pin = 12345;
-            int entry, die1, die2, tries = 0, pins = 0, count =0;
+            int entry, die1, die2, tries = 0, pins = 0, count =0, number;
             bool done = false;
+            string food;
 
             Console.WriteLine("WELCOME TO THE BANK OF ALDWORTH.");
             Console.Write("ENTER YOUR PIN:");
@@ -64,15 +65,42 @@ namespace Loops
             }
             Console.WriteLine("You got doubles!");
 
-            //
+            //7.2
             Console.WriteLine("Type in a message, and I'll desplay it 5 times.");
             Console.Write("Message: ");
             string message = Console.ReadLine();
-
-            while (count < 5);
+            for (int i = 1; i <= 5; i = i + 1)
             {
-                Console.WriteLine((count + 1));
+                Console.WriteLine(i + ": " + message);
             }
+            Console.WriteLine();
+
+            Console.WriteLine("What's your favorite food?");
+            Console.Write("Favorite food: ");
+            food = Console.ReadLine();
+            for (int i = 1; i <= 5; i = i + 1)
+            {
+                Console.WriteLine(i + ": " + food +" is delicious");
+            }
+            Console.WriteLine();
+
+            Console.WriteLine("What do you want me to count to?");
+            int.TryParse(Console.ReadLine(), out number);
+            for (int i = 1; i <= number; i = i + 1)
+            {
+                Console.WriteLine(i + 1);
+            }
+            Console.WriteLine();
+
+            //while (count < 5);
+            //{
+            //    Console.WriteLine((count + 1));
+            //}
+
+            //7.1
+            //Assignment
+            //1.
+
         }
     }
 }
