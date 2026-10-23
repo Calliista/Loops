@@ -10,7 +10,7 @@ namespace Loops
                 //Console.WriteLine("Are we there yet?");
             Random generator = new Random();
             int pin = 12345;
-            int entry, die1, die2, tries = 0, pins = 0, count =0, number, randNum1, randNum2, randNum3, randNum4;
+            int entry, die1, die2, tries = 0, pins = 0, count =0, number, randNum1, randNum2, randNum3, randNum4, temp, guess;
             bool done = false;
             string food;
 
@@ -107,9 +107,34 @@ namespace Loops
             Console.WriteLine(randNum3.ToString());
             randNum4 = generator.Next(10);
             Console.WriteLine(randNum4.ToString());
+            Console.WriteLine();
             Console.WriteLine("Average:");
             Console.WriteLine((randNum1 + randNum2 + randNum3 + randNum4) / 4);
             Console.WriteLine();
+
+            //Assignment 2
+            temp = generator.Next(100);
+            Console.WriteLine("Guess the tempurature: (1-100)");
+            int.TryParse(Console.ReadLine(), out guess);
+            while (guess != temp)
+            {
+                if (guess > temp)
+                {
+                    Console.WriteLine("Too high");
+                    Console.Write("Try again:");
+                    int.TryParse(Console.ReadLine(), out guess);
+                    Console.WriteLine();
+                }
+                if (guess < temp)
+                {
+                    Console.WriteLine("Too Low");
+                    Console.Write("Try again:");
+                    int.TryParse(Console.ReadLine(), out guess);
+                    Console.WriteLine();
+                }
+
+            }
+            Console.WriteLine("You got it right!");
 
             //7.2
             //Assignmrnt 1
