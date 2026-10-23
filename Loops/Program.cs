@@ -10,7 +10,7 @@ namespace Loops
                 //Console.WriteLine("Are we there yet?");
             Random generator = new Random();
             int pin = 12345;
-            int entry, die1, die2, tries = 0, pins = 0, count =0, number;
+            int entry, die1, die2, tries = 0, pins = 0, count =0, number, randNum1, randNum2, randNum3, randNum4;
             bool done = false;
             string food;
 
@@ -60,7 +60,7 @@ namespace Loops
             {
                 die1 = generator.Next(1, 7);
                 die2 = generator.Next(1, 7);
-                Console.WriteLine($"{die1} {die2}");
+                Console.WriteLine($"{die1} - {die2}");
                
             }
             Console.WriteLine("You got doubles!");
@@ -86,11 +86,11 @@ namespace Loops
 
             Console.WriteLine("What do you want me to count to?");
             int.TryParse(Console.ReadLine(), out number);
-            for (int i = 1; i <= number; i = i + 1)
+            for (int i = 0; i <= number; i = i + 1)
             {
                 Console.WriteLine(i + 1);
             }
-            Console.WriteLine();
+            Console.WriteLine("");
 
             //while (count < 5);
             //{
@@ -98,9 +98,59 @@ namespace Loops
             //}
 
             //7.1
-            //Assignment
-            //1.
+            //Assignment 1
+            randNum1 = generator.Next(10);
+            Console.WriteLine(randNum1.ToString());
+            randNum2 = generator.Next(10);
+            Console.WriteLine(randNum2.ToString());
+            randNum3 = generator.Next(10);
+            Console.WriteLine(randNum3.ToString());
+            randNum4 = generator.Next(10);
+            Console.WriteLine(randNum4.ToString());
+            Console.WriteLine("Average:");
+            Console.WriteLine((randNum1 + randNum2 + randNum3 + randNum4) / 4);
+            Console.WriteLine();
 
+            //7.2
+            //Assignmrnt 1
+            for (int i = 0; i <= 9; i = i + 1)
+            {
+                Console.WriteLine(i + 1);
+            }
+            Console.WriteLine("Blastoff!");
+            Console.WriteLine();
+
+            //Assignment 2
+            for (int i = -11; i <= 9; i = i + 2)
+            {
+                Console.WriteLine(i + 1);
+            }
+            Console.WriteLine();
+            for (int y = -11; y <= 9; y = y + 2)
+            {
+                Console.WriteLine(y + 1);
+            }
+            Console.WriteLine();
+
+            //Assignment 3
+            Console.Write("name: ");
+            message = Console.ReadLine();
+            if (message == "Aldworth")
+            {
+                for (int i = 1; i <= 5; i = i + 1)
+                {
+                    Console.WriteLine(i + ": " + message);
+                }
+                Console.WriteLine();
+            }
+            else
+            {
+                for (int i = 1; i <= 10; i = i + 1)
+                {
+                    Console.WriteLine(i + ": " + message);
+                }
+                Console.WriteLine();
+            }
         }
     }
 }
